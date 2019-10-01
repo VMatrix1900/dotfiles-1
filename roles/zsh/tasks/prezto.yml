@@ -14,3 +14,9 @@
     src: "{{ dotfiles_home }}/roles/zsh/files/zshrc.link"
     dest: "{{ '~/.zshrc' | expanduser }}"
     state: link
+
+- name: Link zshenv file
+  file:
+    src: "{{ dotfiles_home }}/roles/zsh/files/zshenv.link"
+    dest: "{{ '~/.zshenv' | expanduser }}"
+    state: link

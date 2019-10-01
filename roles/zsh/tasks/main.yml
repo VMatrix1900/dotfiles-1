@@ -18,6 +18,16 @@
     creates: "{{dotfiles_user_home}}/.zshrc.bak"
   when: zshrc_stat.stat.exists
 
+- name: Check if zshenv already exists
+  stat: path="{{dotfiles_user_home}}/.zshenv"
+  register: zshenv_stat
+
+- name: Back up zshenv if it exists
+  command: mv ~/.zshenv ~/.zshenv.bak
+  args:
+    creates: "{{dotfiles_user_home}}/.zshenv.bak"
+  when: zshenv_stat.stat.exists
+
 - import_tasks: prezto.yml
   when: zsh_prezto
 
