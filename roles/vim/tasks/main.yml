@@ -6,12 +6,16 @@
 - import_tasks: mac.yml
   when: ansible_os_family == "Darwin"
 
-- name: Install python-language-server (used by ale) with pipx
-  command: "pipx install --force python-language-server"
-  args:
-    creates: "{{dotfiles_user_home}}/.local/pipx/venvs/python-language-server"
-  tags:
-    - pipx
+# Neovim config
+- name: Makes sure neovim config directory exists
+  file: path="{{dotfiles_user_home}}/.config/nvim" state=directory
+
+- name: Share neovim and vim config
+  file:
+    src: "{{ dotfiles_home }}/roles/vim/files/init.vim"
+    dest: "{{dotfiles_user_home}}/.config/nvim/init.vim"
+    state: link
+    force: yes
 
 # Plugin manager
 - name: Makes sure autoload directory exists
@@ -21,20 +25,6 @@
   get_url:
     url: https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
     dest: "{{dotfiles_user_home}}/.vim/autoload/plug.vim"
-
-# Snippets
-- name: Makes sure UltiSnips directory exists
-  file: path="{{dotfiles_user_home}}/.vim/UltiSnips" state=directory
-
-- name: Symlink all snippet files
-  file:
-    src: "{{ dotfiles_home }}/roles/vim/files/{{item}}"
-    dest: "{{ dotfiles_user_home}}/.vim/UltiSnips/{{item}}"
-    state: link
-  with_items:
-    - "python.snippets"
-    - "rst.snippets"
-    - "javascript.snippets"
 
 # Configuration
 - name: Check if vimrc exists
@@ -52,6 +42,12 @@
   file:
     src: "{{ dotfiles_home }}/roles/vim/files/vimrc"
     dest: "{{dotfiles_user_home}}/.vimrc"
+    state: link
+
+- name: Symlink vimrc bundles
+  file:
+    src: "{{ dotfiles_home }}/roles/vim/files/vimrc.bundles"
+    dest: "{{dotfiles_user_home}}/.vimrc.bundles"
     state: link
 
 - name: Install plugins
