@@ -5,18 +5,18 @@
 
 - name: Link zpreztorc file
   file:
-    src: "{{ dotfiles_home }}/roles/zsh/files/zpreztorc.link"
+    src: "{{ dotfiles_home }}/roles/zsh/files/zpreztorc"
     dest: "{{ '~/.zpreztorc' | expanduser }}"
     state: link
 
 - name: Link zshrc file
   file:
-    src: "{{ dotfiles_home }}/roles/zsh/files/zshrc.link"
+    src: "{{ dotfiles_home }}/roles/zsh/files/zshrc"
     dest: "{{ '~/.zshrc' | expanduser }}"
     state: link
 
 - name: Link zshenv file
   file:
-    src: "{{ dotfiles_home }}/roles/zsh/files/zshenv.link"
+    src: "{{ dotfiles_home }}/roles/zsh/files/zshenv"
     dest: "{{ '~/.zshenv' | expanduser }}"
     state: link
