@@ -1,0 +1,4 @@
+- name: install z.lua
+  git:
+    repo: https://github.com/skywind3000/z.lua
+    dest: "{{ '~/.zprezto/contrib/' | expanduser}}"
