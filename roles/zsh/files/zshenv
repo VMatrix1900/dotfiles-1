@@ -34,3 +34,4 @@ fi
 
 [ -f $HOME/.zshenv.local ] && source $HOME/.zshenv.local
 
+export PATH=${PATH}:$HOME/.local/bin
