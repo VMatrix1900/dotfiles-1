@@ -6,7 +6,7 @@ if [[ ( "$SHLVL" -eq 1 && ! -o LOGIN ) && -s "${ZDOTDIR:-$HOME}/.zprofile" ]]; t
   source "${ZDOTDIR:-$HOME}/.zprofile"
 fi
 
-export HOMEBREW_BOTTLE_DOMAIN=https://mirrors.tuna.tsinghua.edu.cn/homebrew-bottles
+# export HOMEBREW_BOTTLE_DOMAIN=https://mirrors.tuna.tsinghua.edu.cn/homebrew-bottles
 export HOMEBREW_AUTO_UPDATE_SECS="432000"
 PROXY_PORT=8123
 
@@ -34,4 +34,4 @@ fi
 
 [ -f $HOME/.zshenv.local ] && source $HOME/.zshenv.local
 
-export PATH=${PATH}:$HOME/.local/bin
+export PATH=${PATH}:$HOME/.local/bin:$HOME/.cargo/bin
