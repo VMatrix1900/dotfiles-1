@@ -1,18 +1,7 @@
-
 - import_tasks: mac.yml
   when: ansible_os_family == "Darwin"
 - import_tasks: debian.yml
   when: ansible_os_family == "Debian"
-
-# TODO: Fedora
-
-- name: Install tmuxp with pipx
-  command: "pipx install --force tmuxp"
-  args:
-    creates: "{{dotfiles_user_home}}/.local/pipx/venvs/tmuxp"
-  when: tmux_install_tmuxp|bool
-  tags:
-    - pipx
 
 - name: Install tpm
   git:

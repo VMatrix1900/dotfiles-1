@@ -1,4 +1,4 @@
-- name: Install tmux with homebrew
+- name: Install tmux
   homebrew: name=tmux state=present
 
 - name: Install reattach-to-user-namespace
