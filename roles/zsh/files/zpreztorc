@@ -33,6 +33,7 @@ zstyle ':prezto:load' pmodule \
   'autosuggestions' \
   'prompt' \
   'git' \
+  'python'\
   'syntax-highlighting' \
   'z.lua'
 
