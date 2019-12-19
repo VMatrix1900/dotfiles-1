@@ -1,4 +1,0 @@
-dependencies:
-    - role: markosamuli.pyenv
-      vars:
-            pyenv_init_shell: false
