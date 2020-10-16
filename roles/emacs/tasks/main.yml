@@ -1,9 +1,0 @@
-- name: Install spacemacs
-  git:
-    repo: https://github.com/syl20bnr/spacemacs
-    dest: "{{ ~/.emacs.d | expanduser }}"
-
-- name: symlink .spacemacs
-  file:
-    src: "{{dotfiles_home}}/roles/emacs/files/spacemacs"
-    dst: "{{dotfiles_user_home}}/.spacemacs"

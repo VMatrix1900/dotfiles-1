@@ -11,9 +11,6 @@ vim -u "$HOME"/.vimrc.bundles +PlugUpdate +PlugClean! +qa
 
 reset -Q
 
-git clone --recursive https://github.com/sorin-ionescu/prezto.git "$HOME"/.zprezto"
+git clone --recursive https://github.com/sorin-ionescu/prezto.git "$HOME"/.zprezto
 
-git clone https://github.com/skywind3000/z.lua.git "$HOME"/.zprezto/contrib/
-(called from ${dir}/post-up:${LINENO})
-MSG
-fin
+git clone https://github.com/skywind3000/z.lua.git "$HOME"/.zprezto/contrib/z.lua

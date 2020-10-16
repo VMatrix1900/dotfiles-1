@@ -1,5 +1,0 @@
-- name: Install neovim with Homebrew
-  homebrew: name=neovim state=present
-
-- name: Install exuberant-ctags (needed for TagBar plugin)
-  homebrew: name=ctags-exuberant state=present
