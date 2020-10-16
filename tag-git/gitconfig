@@ -1,0 +1,15 @@
+[user]
+        name = Vincent Stone
+        email = shihang7422166@gmail.com
+[credential]
+        helper = osxkeychain
+[color]
+        diff = auto
+        status = auto
+        branch = auto
+        ui = true
+[core]
+        excludesfile = ~/.gitignore_global
+        editor = vim
+[github]
+        user = VMatrix1900

@@ -1,0 +1,8 @@
+- name: Install tmux
+  package:
+      name: tmux
+      state: present
+- name: Install tpm
+  git:
+    repo: https://github.com/tmux-plugins/tpm
+    dest: "{{dotfiles_user_home}}/.tmux/plugins/tpm"

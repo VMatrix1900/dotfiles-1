@@ -3,10 +3,7 @@
   roles:
     # Tag each role so that we can select individual roles to run with ansible-playbook --tags
     - {role: git, tags: ['git']}
-    - {role: package_manager, tags: ['package_manager', 'bootstrap']}
     - {role: zsh, tags: ['zsh', 'bootstrap']}
     - {role: z}
-    - {role: oefenweb.yarn, become: yes}
     - {role: vim, tags: ['vim']}
     - {role: tmux, tags: ['tmux'], become: yes}
-    - {role: macos, tags: ['macos'], when: ansible_os_family == "Darwin"}
