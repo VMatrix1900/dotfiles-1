@@ -1,6 +1,6 @@
 [user]
-        name = Vincent Stone
-        email = shihang7422166@gmail.com
+	name = Vincent Stone
+	email = shihang7422166@gmail.com
 [credential]
         helper = osxkeychain
 [color]
@@ -9,7 +9,15 @@
         branch = auto
         ui = true
 [core]
-        excludesfile = ~/.gitignore_global
+	excludesfile = /Users/Vincent/.gitignore_global
         editor = vim
 [github]
         user = VMatrix1900
+[difftool "sourcetree"]
+	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+	path = 
+[mergetool "sourcetree"]
+	cmd = /Applications/Sourcetree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	trustExitCode = true
+[commit]
+	template = /Users/Vincent/.stCommitMsg
